@@ -14,6 +14,13 @@
 		040D948F21B0CABC00897C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040D948D21B0CABC00897C71 /* LaunchScreen.storyboard */; };
 		040D949A21B0CABC00897C71 /* MyKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D949921B0CABC00897C71 /* MyKeyboardTests.swift */; };
 		040D94A521B0CABC00897C71 /* MyKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94A421B0CABC00897C71 /* MyKeyboardUITests.swift */; };
+		040D94B921B0D0FB00897C71 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */; };
+		040D94BD21B0D0FB00897C71 /* AKboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 040D94B621B0D0FB00897C71 /* AKboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		040D94C321B0D69500897C71 /* AKboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040D94C221B0D69500897C71 /* AKboard.xib */; };
+		040D94C521B0DD1D00897C71 /* KeysConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040D94C421B0DD1D00897C71 /* KeysConfig.plist */; };
+		040D94CA21B1276200897C71 /* AKboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94C921B1276200897C71 /* AKboardView.swift */; };
+		040D94CE21B262EB00897C71 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94CD21B262EB00897C71 /* PageView.swift */; };
+		040D94D021B2737600897C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040D948B21B0CABC00897C71 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,28 @@
 			remoteGlobalIDString = 040D948021B0CABC00897C71;
 			remoteInfo = MyKeyboard;
 		};
+		040D94BB21B0D0FB00897C71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040D947921B0CABC00897C71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040D94B521B0D0FB00897C71;
+			remoteInfo = AKboard;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		040D94C121B0D0FB00897C71 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				040D94BD21B0D0FB00897C71 /* AKboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		040D948121B0CABC00897C71 /* MyKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +75,14 @@
 		040D94A021B0CABC00897C71 /* MyKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		040D94A421B0CABC00897C71 /* MyKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKeyboardUITests.swift; sourceTree = "<group>"; };
 		040D94A621B0CABC00897C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040D94B621B0D0FB00897C71 /* AKboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AKboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		040D94BA21B0D0FB00897C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040D94C221B0D69500897C71 /* AKboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AKboard.xib; sourceTree = "<group>"; };
+		040D94C421B0DD1D00897C71 /* KeysConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeysConfig.plist; sourceTree = "<group>"; };
+		040D94C921B1276200897C71 /* AKboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKboardView.swift; sourceTree = "<group>"; };
+		040D94CD21B262EB00897C71 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		040D94CF21B2717800897C71 /* MyKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyKeyboard.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +107,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		040D94B321B0D0FB00897C71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +123,7 @@
 				040D948321B0CABC00897C71 /* MyKeyboard */,
 				040D949821B0CABC00897C71 /* MyKeyboardTests */,
 				040D94A321B0CABC00897C71 /* MyKeyboardUITests */,
+				040D94B721B0D0FB00897C71 /* AKboard */,
 				040D948221B0CABC00897C71 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +134,7 @@
 				040D948121B0CABC00897C71 /* MyKeyboard.app */,
 				040D949521B0CABC00897C71 /* MyKeyboardTests.xctest */,
 				040D94A021B0CABC00897C71 /* MyKeyboardUITests.xctest */,
+				040D94B621B0D0FB00897C71 /* AKboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +142,7 @@
 		040D948321B0CABC00897C71 /* MyKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				040D94CF21B2717800897C71 /* MyKeyboard.entitlements */,
 				040D948421B0CABC00897C71 /* AppDelegate.swift */,
 				040D948621B0CABC00897C71 /* ViewController.swift */,
 				040D948821B0CABC00897C71 /* Main.storyboard */,
@@ -125,6 +171,19 @@
 			path = MyKeyboardUITests;
 			sourceTree = "<group>";
 		};
+		040D94B721B0D0FB00897C71 /* AKboard */ = {
+			isa = PBXGroup;
+			children = (
+				040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */,
+				040D94BA21B0D0FB00897C71 /* Info.plist */,
+				040D94C221B0D69500897C71 /* AKboard.xib */,
+				040D94C421B0DD1D00897C71 /* KeysConfig.plist */,
+				040D94C921B1276200897C71 /* AKboardView.swift */,
+				040D94CD21B262EB00897C71 /* PageView.swift */,
+			);
+			path = AKboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +194,12 @@
 				040D947D21B0CABC00897C71 /* Sources */,
 				040D947E21B0CABC00897C71 /* Frameworks */,
 				040D947F21B0CABC00897C71 /* Resources */,
+				040D94C121B0D0FB00897C71 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				040D94BC21B0D0FB00897C71 /* PBXTargetDependency */,
 			);
 			name = MyKeyboard;
 			productName = MyKeyboard;
@@ -181,6 +242,23 @@
 			productReference = 040D94A021B0CABC00897C71 /* MyKeyboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		040D94B521B0D0FB00897C71 /* AKboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040D94BE21B0D0FB00897C71 /* Build configuration list for PBXNativeTarget "AKboard" */;
+			buildPhases = (
+				040D94B221B0D0FB00897C71 /* Sources */,
+				040D94B321B0D0FB00897C71 /* Frameworks */,
+				040D94B421B0D0FB00897C71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AKboard;
+			productName = AKboard;
+			productReference = 040D94B621B0D0FB00897C71 /* AKboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,6 +271,11 @@
 				TargetAttributes = {
 					040D948021B0CABC00897C71 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					040D949421B0CABC00897C71 = {
 						CreatedOnToolsVersion = 10.1;
@@ -201,6 +284,9 @@
 					040D949F21B0CABC00897C71 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 040D948021B0CABC00897C71;
+					};
+					040D94B521B0D0FB00897C71 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -220,6 +306,7 @@
 				040D948021B0CABC00897C71 /* MyKeyboard */,
 				040D949421B0CABC00897C71 /* MyKeyboardTests */,
 				040D949F21B0CABC00897C71 /* MyKeyboardUITests */,
+				040D94B521B0D0FB00897C71 /* AKboard */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +333,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040D94B421B0D0FB00897C71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040D94C321B0D69500897C71 /* AKboard.xib in Resources */,
+				040D94D021B2737600897C71 /* Assets.xcassets in Resources */,
+				040D94C521B0DD1D00897C71 /* KeysConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +374,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		040D94B221B0D0FB00897C71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040D94CE21B262EB00897C71 /* PageView.swift in Sources */,
+				040D94B921B0D0FB00897C71 /* KeyboardViewController.swift in Sources */,
+				040D94CA21B1276200897C71 /* AKboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +396,11 @@
 			isa = PBXTargetDependency;
 			target = 040D948021B0CABC00897C71 /* MyKeyboard */;
 			targetProxy = 040D94A121B0CABC00897C71 /* PBXContainerItemProxy */;
+		};
+		040D94BC21B0D0FB00897C71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040D94B521B0D0FB00897C71 /* AKboard */;
+			targetProxy = 040D94BB21B0D0FB00897C71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,7 +543,9 @@
 		040D94AA21B0CABC00897C71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyKeyboard/MyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF7F5LHH5A;
 				INFOPLIST_FILE = MyKeyboard/Info.plist;
@@ -449,7 +563,9 @@
 		040D94AB21B0CABC00897C71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyKeyboard/MyKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF7F5LHH5A;
 				INFOPLIST_FILE = MyKeyboard/Info.plist;
@@ -546,6 +662,46 @@
 			};
 			name = Release;
 		};
+		040D94BF21B0D0FB00897C71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UF7F5LHH5A;
+				INFOPLIST_FILE = AKboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tunks.MyKeyboard.AKboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		040D94C021B0D0FB00897C71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UF7F5LHH5A;
+				INFOPLIST_FILE = AKboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tunks.MyKeyboard.AKboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +737,15 @@
 			buildConfigurations = (
 				040D94B021B0CABC00897C71 /* Debug */,
 				040D94B121B0CABC00897C71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040D94BE21B0D0FB00897C71 /* Build configuration list for PBXNativeTarget "AKboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040D94BF21B0D0FB00897C71 /* Debug */,
+				040D94C021B0D0FB00897C71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
