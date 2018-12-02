@@ -21,6 +21,9 @@
 		040D94CA21B1276200897C71 /* AKboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94C921B1276200897C71 /* AKboardView.swift */; };
 		040D94CE21B262EB00897C71 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94CD21B262EB00897C71 /* PageView.swift */; };
 		040D94D021B2737600897C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040D948B21B0CABC00897C71 /* Assets.xcassets */; };
+		040F248921B3ABC100EB0439 /* MyPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248821B3ABC100EB0439 /* MyPageControl.swift */; };
+		040F248B21B3AD0A00EB0439 /* KeyboardDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */; };
+		043D74FA21B3C79A0040EA28 /* KeyboardDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,8 @@
 		040D94C921B1276200897C71 /* AKboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKboardView.swift; sourceTree = "<group>"; };
 		040D94CD21B262EB00897C71 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		040D94CF21B2717800897C71 /* MyKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyKeyboard.entitlements; sourceTree = "<group>"; };
+		040F248821B3ABC100EB0439 /* MyPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageControl.swift; sourceTree = "<group>"; };
+		040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDataHandle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 				040D948B21B0CABC00897C71 /* Assets.xcassets */,
 				040D948D21B0CABC00897C71 /* LaunchScreen.storyboard */,
 				040D949021B0CABC00897C71 /* Info.plist */,
+				040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */,
 			);
 			path = MyKeyboard;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				040D94C421B0DD1D00897C71 /* KeysConfig.plist */,
 				040D94C921B1276200897C71 /* AKboardView.swift */,
 				040D94CD21B262EB00897C71 /* PageView.swift */,
+				040F248821B3ABC100EB0439 /* MyPageControl.swift */,
 			);
 			path = AKboard;
 			sourceTree = "<group>";
@@ -210,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040D94AC21B0CABC00897C71 /* Build configuration list for PBXNativeTarget "MyKeyboardTests" */;
 			buildPhases = (
+				9D7CF4B65FCCC226B4929B58 /* [CP] Check Pods Manifest.lock */,
 				040D949121B0CABC00897C71 /* Sources */,
 				040D949221B0CABC00897C71 /* Frameworks */,
 				040D949321B0CABC00897C71 /* Resources */,
@@ -228,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040D94AF21B0CABC00897C71 /* Build configuration list for PBXNativeTarget "MyKeyboardUITests" */;
 			buildPhases = (
+				02DAB1F9467174C2A6060ED1 /* [CP] Check Pods Manifest.lock */,
 				040D949C21B0CABC00897C71 /* Sources */,
 				040D949D21B0CABC00897C71 /* Frameworks */,
 				040D949E21B0CABC00897C71 /* Resources */,
@@ -348,6 +357,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02DAB1F9467174C2A6060ED1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyKeyboardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D7CF4B65FCCC226B4929B58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyKeyboardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		040D947D21B0CABC00897C71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -355,6 +403,7 @@
 			files = (
 				040D948721B0CABC00897C71 /* ViewController.swift in Sources */,
 				040D948521B0CABC00897C71 /* AppDelegate.swift in Sources */,
+				040F248B21B3AD0A00EB0439 /* KeyboardDataHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,8 +427,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043D74FA21B3C79A0040EA28 /* KeyboardDataHandle.swift in Sources */,
 				040D94CE21B262EB00897C71 /* PageView.swift in Sources */,
 				040D94B921B0D0FB00897C71 /* KeyboardViewController.swift in Sources */,
+				040F248921B3ABC100EB0439 /* MyPageControl.swift in Sources */,
 				040D94CA21B1276200897C71 /* AKboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

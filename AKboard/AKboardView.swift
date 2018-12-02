@@ -85,17 +85,20 @@ class AKboardView: UIView{
             view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         }
         
+       // setupPageControls()
+    }
+    
+    func setupPageControls(){
         // *** ADD PAGECONTROLL *** //
         // [1]
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        //pageControl.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(pageControl)
-        pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
+        //pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        //pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
         // [2]
-        pageControl.numberOfPages = views.count
+        pageControl.numberOfPages = 3;//views.count
         // [3]
         pageControl.addTarget(self, action: #selector(pageControlTapped(sender:)), for: .valueChanged)
-        
     }
     
     @objc func pageControlTapped(sender: UIPageControl) {
@@ -116,4 +119,10 @@ extension AKboardView: UIScrollViewDelegate {
         
         pageControl.currentPage = Int((round(pageFraction)))
     }
+}
+
+
+
+protocol AKboardViewActionDelegate {
+    func setupControls();
 }
