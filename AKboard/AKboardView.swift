@@ -47,7 +47,7 @@ class AKboardView: UIView{
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10),
             // [2]
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
             ])
         
         // *** SETUP STACKVIEW AND ADD SUBVIEWS *** //
@@ -81,7 +81,7 @@ class AKboardView: UIView{
             view.translatesAutoresizingMaskIntoConstraints = false
             // [2]
             stackView.addArrangedSubview(view)
-            view.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+            view.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -20).isActive = true
             view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         }
         

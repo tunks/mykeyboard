@@ -20,6 +20,8 @@ class PageCategory{
         let button = UIButton()
        // let image = UIImage(named: "letter_a")
         button.setTitle(title!, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+
         return button
     }
 }
@@ -35,6 +37,7 @@ class MyPageControl : NSObject{
         stack?.spacing = 20
         stack?.distribution = .fillEqually
         stack?.alignment = .center
+    
         
         super.init()
         

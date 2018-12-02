@@ -16,19 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="313" height="198"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-k1-L1u">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-k1-L1u">
                     <rect key="frame" x="0.0" y="0.0" width="313" height="198"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="wLH-k1-L1u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C8Q-hJ-Lyr"/>
-                <constraint firstItem="wLH-k1-L1u" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q5U-VM-Npp"/>
-                <constraint firstItem="wLH-k1-L1u" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Yit-fb-cdi"/>
-                <constraint firstItem="wLH-k1-L1u" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="k93-ob-oxY"/>
-            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

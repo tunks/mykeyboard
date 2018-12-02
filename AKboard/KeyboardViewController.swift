@@ -62,18 +62,21 @@ class KeyboardViewController: UIInputViewController {
     
     func loadKeyboard(){
         // load the nib file
-            let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
-            // instantiate the view
-            keyboardView = keyboardNib.instantiate(withOwner: self)[0] as? AKboardView
-            // add the interface to the main view
-            //self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
-
-            self.view.addSubview(keyboardView)
+          let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
+          // instantiate the view
+          keyboardView = keyboardNib.instantiate(withOwner: self)[0] as? AKboardView
+          // add the interface to the main view
+          //self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
+          self.view.addSubview(keyboardView)
+        
+          //self.nextKeyboardButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
           //self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+
         //self.keyboardView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        // self.keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+          //self.keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50).isActive = true
             //self.keyboardView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-       // self.keyboardView.widthAnchor.c
+         // self.keyboardView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
 
             
             // copy the background color
@@ -87,6 +90,7 @@ class KeyboardViewController: UIInputViewController {
         // *** ADD PAGECONTROLL *** //
         // [1]
         pageControl.translatesAutoresizingMaskIntoConstraints = false
+        
         //pageControl.bringSubviewToFront(self.view)
         self.view.addSubview(pageControl)
         pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -107,8 +111,8 @@ class KeyboardViewController: UIInputViewController {
 
         self.myPageControl = MyPageControl(categories)
         self.myPageControl.stack!.translatesAutoresizingMaskIntoConstraints = false
+        //myPageControl.stack?.sizeToFit()
         self.view.addSubview(self.myPageControl.stack!)
-        
         myPageControl.stack!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
     }

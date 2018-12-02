@@ -32,7 +32,7 @@ class PageView: UIView  {
     }
 
     func setup(){
-        keyPhrases = ["Dispatch not found", "Wifi Configuration issue",  "Customer reported Issue"];
+        keyPhrases = ["Technical is dispatched", "Wifi Configuration issue",  "Customer reported Issue", "No issue Found"];
        /*
           let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
           let displayWidth: CGFloat = self.view.frame.width
@@ -46,6 +46,7 @@ class PageView: UIView  {
        tableView.delegate = self
        //tableView.sizeToFit()
        tableView.translatesAutoresizingMaskIntoConstraints = false
+       //tableView.backgroundColor = UIColor.lightGray
        self.addSubview(tableView)
         // Creating and activating the constraints
         NSLayoutConstraint.activate([
@@ -69,6 +70,8 @@ extension PageView: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(keyPhrases![indexPath.row])"
         cell.textLabel?.textColor = .black
+        cell.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+        //cell.textLabel?.backgroundColor = UIColor.white
         return cell
     }
 }
