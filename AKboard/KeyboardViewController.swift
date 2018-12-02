@@ -58,7 +58,7 @@ class KeyboardViewController: UIInputViewController {
 
     
     func loadKeyboard(){
-            // load the nib file
+        // load the nib file
             let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
             // instantiate the view
             keyboardView = keyboardNib.instantiate(withOwner: self)[0] as? AKboardView
