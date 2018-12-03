@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MyKeyboardDefaultDictionary</key>
+	<array>
+		<dict>
+			<key>keytype</key>
+			<string>text</string>
+			<key>keytext</key>
+			<string>Wifi channel had interference</string>
+		</dict>
+		<dict>
+			<key>keytype</key>
+			<string>text</string>
+			<key>keytext</key>
+			<string>Wire was found defective</string>
+		</dict>
+		<dict>
+			<key>keytype</key>
+			<string>text</string>
+			<key>keytext</key>
+			<string>No issue found</string>
+		</dict>
+		<dict>
+			<key>keytype</key>
+			<string>text</string>
+			<key>keytext</key>
+			<string>Dispatch scheduled on</string>
+		</dict>
+		<dict>
+			<key>keytype</key>
+			<string>text</string>
+			<key>keytext</key>
+			<string>Customer had incorrect Wifi configuration</string>
+		</dict>
+	</array>
+</dict>
+</plist>

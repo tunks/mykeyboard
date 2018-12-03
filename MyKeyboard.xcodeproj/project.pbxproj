@@ -17,13 +17,17 @@
 		040D94B921B0D0FB00897C71 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */; };
 		040D94BD21B0D0FB00897C71 /* AKboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 040D94B621B0D0FB00897C71 /* AKboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		040D94C321B0D69500897C71 /* AKboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040D94C221B0D69500897C71 /* AKboard.xib */; };
-		040D94C521B0DD1D00897C71 /* KeysConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040D94C421B0DD1D00897C71 /* KeysConfig.plist */; };
 		040D94CA21B1276200897C71 /* AKboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94C921B1276200897C71 /* AKboardView.swift */; };
 		040D94CE21B262EB00897C71 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D94CD21B262EB00897C71 /* PageView.swift */; };
 		040D94D021B2737600897C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040D948B21B0CABC00897C71 /* Assets.xcassets */; };
 		040F248921B3ABC100EB0439 /* MyPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248821B3ABC100EB0439 /* MyPageControl.swift */; };
-		040F248B21B3AD0A00EB0439 /* KeyboardDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */; };
-		043D74FA21B3C79A0040EA28 /* KeyboardDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */; };
+		043D74FC21B452520040EA28 /* PageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D74FB21B452520040EA28 /* PageTableCell.swift */; };
+		043D74FE21B452AA0040EA28 /* PageTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043D74FD21B452AA0040EA28 /* PageTableCell.xib */; };
+		043D750021B4C4D80040EA28 /* KeyboardDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D74FF21B4C4D80040EA28 /* KeyboardDataStore.swift */; };
+		043D750121B4D4F70040EA28 /* KeyboardDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D74FF21B4C4D80040EA28 /* KeyboardDataStore.swift */; };
+		043D750421B4DABD0040EA28 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 043D750321B4DABD0040EA28 /* Settings.bundle */; };
+		043D750521B4DC7D0040EA28 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 043D750321B4DABD0040EA28 /* Settings.bundle */; };
+		043D750621B505D30040EA28 /* KeyboardDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,12 +86,15 @@
 		040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		040D94BA21B0D0FB00897C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040D94C221B0D69500897C71 /* AKboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AKboard.xib; sourceTree = "<group>"; };
-		040D94C421B0DD1D00897C71 /* KeysConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeysConfig.plist; sourceTree = "<group>"; };
 		040D94C921B1276200897C71 /* AKboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKboardView.swift; sourceTree = "<group>"; };
 		040D94CD21B262EB00897C71 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		040D94CF21B2717800897C71 /* MyKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyKeyboard.entitlements; sourceTree = "<group>"; };
 		040F248821B3ABC100EB0439 /* MyPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageControl.swift; sourceTree = "<group>"; };
 		040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDataHandle.swift; sourceTree = "<group>"; };
+		043D74FB21B452520040EA28 /* PageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableCell.swift; sourceTree = "<group>"; };
+		043D74FD21B452AA0040EA28 /* PageTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageTableCell.xib; sourceTree = "<group>"; };
+		043D74FF21B4C4D80040EA28 /* KeyboardDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDataStore.swift; sourceTree = "<group>"; };
+		043D750321B4DABD0040EA28 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +132,7 @@
 		040D947821B0CABC00897C71 = {
 			isa = PBXGroup;
 			children = (
+				043D750321B4DABD0040EA28 /* Settings.bundle */,
 				040D948321B0CABC00897C71 /* MyKeyboard */,
 				040D949821B0CABC00897C71 /* MyKeyboardTests */,
 				040D94A321B0CABC00897C71 /* MyKeyboardUITests */,
@@ -154,7 +162,7 @@
 				040D948B21B0CABC00897C71 /* Assets.xcassets */,
 				040D948D21B0CABC00897C71 /* LaunchScreen.storyboard */,
 				040D949021B0CABC00897C71 /* Info.plist */,
-				040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */,
+				043D74FF21B4C4D80040EA28 /* KeyboardDataStore.swift */,
 			);
 			path = MyKeyboard;
 			sourceTree = "<group>";
@@ -180,13 +188,15 @@
 		040D94B721B0D0FB00897C71 /* AKboard */ = {
 			isa = PBXGroup;
 			children = (
+				040F248A21B3AD0A00EB0439 /* KeyboardDataHandle.swift */,
 				040D94B821B0D0FB00897C71 /* KeyboardViewController.swift */,
 				040D94BA21B0D0FB00897C71 /* Info.plist */,
 				040D94C221B0D69500897C71 /* AKboard.xib */,
-				040D94C421B0DD1D00897C71 /* KeysConfig.plist */,
 				040D94C921B1276200897C71 /* AKboardView.swift */,
 				040D94CD21B262EB00897C71 /* PageView.swift */,
 				040F248821B3ABC100EB0439 /* MyPageControl.swift */,
+				043D74FB21B452520040EA28 /* PageTableCell.swift */,
+				043D74FD21B452AA0040EA28 /* PageTableCell.xib */,
 			);
 			path = AKboard;
 			sourceTree = "<group>";
@@ -325,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043D750421B4DABD0040EA28 /* Settings.bundle in Resources */,
 				040D948F21B0CABC00897C71 /* LaunchScreen.storyboard in Resources */,
 				040D948C21B0CABC00897C71 /* Assets.xcassets in Resources */,
 				040D948A21B0CABC00897C71 /* Main.storyboard in Resources */,
@@ -349,9 +360,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043D750521B4DC7D0040EA28 /* Settings.bundle in Resources */,
 				040D94C321B0D69500897C71 /* AKboard.xib in Resources */,
 				040D94D021B2737600897C71 /* Assets.xcassets in Resources */,
-				040D94C521B0DD1D00897C71 /* KeysConfig.plist in Resources */,
+				043D74FE21B452AA0040EA28 /* PageTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,8 +414,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				040D948721B0CABC00897C71 /* ViewController.swift in Sources */,
+				043D750021B4C4D80040EA28 /* KeyboardDataStore.swift in Sources */,
 				040D948521B0CABC00897C71 /* AppDelegate.swift in Sources */,
-				040F248B21B3AD0A00EB0439 /* KeyboardDataHandle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,9 +439,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043D74FA21B3C79A0040EA28 /* KeyboardDataHandle.swift in Sources */,
+				043D750621B505D30040EA28 /* KeyboardDataHandle.swift in Sources */,
+				043D750121B4D4F70040EA28 /* KeyboardDataStore.swift in Sources */,
 				040D94CE21B262EB00897C71 /* PageView.swift in Sources */,
 				040D94B921B0D0FB00897C71 /* KeyboardViewController.swift in Sources */,
+				043D74FC21B452520040EA28 /* PageTableCell.swift in Sources */,
 				040F248921B3ABC100EB0439 /* MyPageControl.swift in Sources */,
 				040D94CA21B1276200897C71 /* AKboardView.swift in Sources */,
 			);

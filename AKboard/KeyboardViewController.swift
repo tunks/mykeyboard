@@ -12,7 +12,7 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
-    var dataHandle: KeyboardDataHandle?
+    var dataHandle: DataHandle = KeyboardDataHandle()
     
     var keyboardView: UIView!
     var pageControl = UIPageControl()
@@ -23,9 +23,17 @@ class KeyboardViewController: UIInputViewController {
         // Add custom view sizing constraints here
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        KeyboardDataStore.registerDefaultsFromSettingsBundle()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.dataHandle = KeyboardDataHandle()
         // Perform custom UI setup here
+        self.view.backgroundColor = UIColor.white
         self.nextKeyboardButton = UIButton(type: .system)
         
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next", comment: "Title for 'Next Keyboard' button"), for: [])
@@ -66,16 +74,21 @@ class KeyboardViewController: UIInputViewController {
           // instantiate the view
           keyboardView = keyboardNib.instantiate(withOwner: self)[0] as? AKboardView
           // add the interface to the main view
-          //self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
+         // self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
           self.view.addSubview(keyboardView)
         
           //self.nextKeyboardButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
           //self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
 
-        //self.keyboardView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-          //self.keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50).isActive = true
-            //self.keyboardView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-         // self.keyboardView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+          //self.keyboardView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+          //self.view.to
+         NSLayoutConstraint.activate([
+           keyboardView.topAnchor.constraint(equalTo: view.topAnchor ),
+           keyboardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+           keyboardView.leftAnchor.constraint(equalTo: view.leftAnchor),
+           keyboardView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            ])
+           
 
 
             
@@ -114,7 +127,7 @@ class KeyboardViewController: UIInputViewController {
         //myPageControl.stack?.sizeToFit()
         self.view.addSubview(self.myPageControl.stack!)
         myPageControl.stack!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     @objc func pageControlTapped(sender: UIPageControl) {

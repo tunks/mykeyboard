@@ -12,7 +12,7 @@ import UIKit
 class PageView: UIView  {
 
     var index: Int?
-    private var tableView: UITableView!
+    var tableView: UITableView!
     var keyPhrases : [String]?
 
     // Designated Init method
@@ -32,6 +32,7 @@ class PageView: UIView  {
     }
 
     func setup(){
+        debugPrint("setup is started...")
         keyPhrases = ["Technical is dispatched", "Wifi Configuration issue",  "Customer reported Issue", "No issue Found"];
        /*
           let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
@@ -41,12 +42,15 @@ class PageView: UIView  {
 
        */
        tableView = UITableView(frame: .zero)
-       tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-       tableView.dataSource = self
-       tableView.delegate = self
+       //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")B
+        tableView.register(PageTableCell.self, forCellReuseIdentifier: "MyCell")
+
        //tableView.sizeToFit()
        tableView.translatesAutoresizingMaskIntoConstraints = false
+       //tableView.allowsSelection = true
        //tableView.backgroundColor = UIColor.lightGray
+        tableView.isUserInteractionEnabled = true
+
        self.addSubview(tableView)
         // Creating and activating the constraints
         NSLayoutConstraint.activate([
@@ -54,32 +58,72 @@ class PageView: UIView  {
           tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 2),
           tableView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
           //tableView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-          tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+          tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10),
           //tableView.widthAnchor.constraint(equalTo: self.widthAnchor , constant: -100)
-          tableView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: (2/4))
+          tableView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: (3/4))
         ])
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.isUserInteractionEnabled = true
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 }
 
-extension PageView: UITableViewDelegate, UITableViewDataSource{
+extension PageView: UITableViewDataSource , UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (keyPhrases?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell",
+                                                 for: indexPath as IndexPath) as! PageTableCell
+
         cell.textLabel!.text = "\(keyPhrases![indexPath.row])"
         cell.textLabel?.textColor = .black
+        //cell.textButton.setTitle("testing", for: .normal)
+        //cell.textLabel?.textColor = .black
         cell.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+       //
+        //cell.isUserInteractionEnabled = true
+        //cell.textLabel?.isUserInteractionEnabled = false;
         //cell.textLabel?.backgroundColor = UIColor.white
+        print("testing log")
+       // print(cell.textButton.debugDescription)
         return cell
+    }
+    
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        print("Row selected: \(indexPath.description)")
+        let currentCell = self.tableView.cellForRow(at: indexPath)
+        currentCell?.textLabel?.text = (currentCell?.textLabel?.text)! + "!"
+    }
+    
+}
+
+
+extension PageView{
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PageView.dismissKeyboard))
+        self.tableView.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
+    
+    @objc func dismissKeyboard() {
+        //self..endEditing(true)
     }
 }
 
 
-
-
-
+class Page{
+    
+}
 
 
 

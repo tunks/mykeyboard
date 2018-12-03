@@ -18,23 +18,23 @@ class AKboardView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        //setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+       // setup()
     }
     
     convenience init() {
         self.init(frame: CGRect.zero)
     }
     
-    private func setup() {
+    func setup( keypages: [KeyboardPage]) {
         // *** SETUP SCROLLVIEW *** //
         // [1]
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .black
+        scrollView.backgroundColor = .white
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
@@ -47,7 +47,7 @@ class AKboardView: UIView{
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10),
             // [2]
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         
         // *** SETUP STACKVIEW AND ADD SUBVIEWS *** //
@@ -76,16 +76,24 @@ class AKboardView: UIView{
         views.append(pageView2)
         views.append(pageView3)
         views.append(pageView4)
+
         // [1]
         views.forEach { (view) in
+            //view.isUserInteractionEnabled = true
             view.translatesAutoresizingMaskIntoConstraints = false
             // [2]
             stackView.addArrangedSubview(view)
-            view.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -20).isActive = true
+            view.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (3/4)).isActive = true
             view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+           
         }
         
+        //self.isUserInteractionEnabled = true
+        //stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (2/4))
+        
        // setupPageControls()
+        //scrollView.alwaysBounceVertical = false
+        scrollView.isUserInteractionEnabled = true
     }
     
     func setupPageControls(){
@@ -120,8 +128,6 @@ extension AKboardView: UIScrollViewDelegate {
         pageControl.currentPage = Int((round(pageFraction)))
     }
 }
-
-
 
 protocol AKboardViewActionDelegate {
     func setupControls();
