@@ -12,9 +12,8 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
-    var dataHandle: DataHandle = KeyboardDataHandle()
+    var keyboardHandle: KeyboardDataHandle = KeyboardDataHandle()
     
-    var keyboardView: UIView!
     var pageControl = UIPageControl()
     var myPageControl: MyPageControl!
 
@@ -72,11 +71,13 @@ class KeyboardViewController: UIInputViewController {
         // load the nib file
           let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
           // instantiate the view
-          keyboardView = keyboardNib.instantiate(withOwner: self)[0] as? AKboardView
+          let keyboardView = keyboardNib.instantiate(withOwner: self)[0] as! AKboardView
           // add the interface to the main view
          // self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
+          keyboardView.keyboardDelegate = self
+          keyboardView.setup(keyboardHandle.getAll())
+
           self.view.addSubview(keyboardView)
-        
         
           //self.nextKeyboardButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
           //self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
@@ -89,18 +90,13 @@ class KeyboardViewController: UIInputViewController {
            keyboardView.leftAnchor.constraint(equalTo: view.leftAnchor),
            keyboardView.widthAnchor.constraint(equalTo: view.widthAnchor)
             ])
-           
-
-
-            
+        
             // copy the background color
-            //view.backgroundColor = calculatorView.backgroundColor
         //self.setupPageControl();
         setupMyPageControl()
     }
     
     func setupPageControl(){
-        
         // *** ADD PAGECONTROLL *** //
         // [1]
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -130,20 +126,12 @@ class KeyboardViewController: UIInputViewController {
         myPageControl.stack!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
-    @objc func pageControlTapped(sender: UIPageControl) {
-        /*let pageWidth = self.view.bounds.width
-        let offset = sender.currentPage * Int(pageWidth)
-       / UIView.animate(withDuration: 0.33, animations: { [weak self] in
-            self?.scrollView.contentOffset.x = CGFloat(offset)
-        })
-      */
-    }
 }
 
 
-extension KeyboardViewController: AKboardViewActionDelegate{
-    func setupControls() {
-        
+extension KeyboardViewController: AKboardActionDelegate{
+    func keyboardPhraseSelected(_ text: String) {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText(text)
     }
 }

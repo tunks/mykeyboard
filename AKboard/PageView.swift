@@ -14,8 +14,7 @@ class PageView: UIView  {
     var index: Int?
     var tableView: UITableView!
     var keyPhrases : [String]?
-   /*
- */
+    var keyboardDelegate: AKboardActionDelegate?
     // Designated Init method
     init(index: Int, backgroundColor: UIColor) {
         super.init(frame: .zero)
@@ -29,7 +28,7 @@ class PageView: UIView  {
         
     }
     
-    init(index: Int, backgroundColor: UIColor, keyboardItems: Set<KeyboardItem> ) {
+    init(index: Int, backgroundColor: UIColor, keyboardItems: [KeyboardItem] ) {
         super.init(frame: .zero)
         keyPhrases = keyboardItems.map({$0.text})
         setup()
@@ -86,7 +85,6 @@ class PageView: UIView  {
 }
 
 extension PageView: UITableViewDataSource , UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (keyPhrases?.count)!
     }
@@ -116,7 +114,9 @@ extension PageView: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         print("Row selected: \(indexPath.description)")
         let currentCell = self.tableView.cellForRow(at: indexPath)
-        currentCell?.textLabel?.text = (currentCell?.textLabel?.text)! + "!"
+        let text = currentCell?.textLabel?.text;
+        //currentCell?.textLabel?.text = (currentCell?.textLabel?.text)! + "!"
+        keyboardDelegate?.keyboardPhraseSelected(text!)
     }
     
 }
@@ -135,10 +135,9 @@ extension PageView{
 }
 
 
-class Page{
+protocol PageViewDelegate{
     
 }
-
 
 
 

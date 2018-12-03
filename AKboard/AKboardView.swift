@@ -15,6 +15,7 @@ class AKboardView: UIView{
     private var stackView = UIStackView(frame: .zero)
     private var views:[UIView] = []
     var pageControl = UIPageControl()
+    var keyboardDelegate: AKboardActionDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +31,7 @@ class AKboardView: UIView{
         self.init(frame: CGRect.zero)
     }
     
-    func setup( keypages: [KeyboardPage]) {
+    func setup( _ keypages: [KeyboardPage]) {
         // *** SETUP SCROLLVIEW *** //
         // [1]
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,8 +67,9 @@ class AKboardView: UIView{
             ])
         
         // Initializing the views we'll put in the scrollView and adding them to an array for convenience
-        
-        for pageView in keypages.flatMap({$0.pageViews()}){
+        for page in keypages{
+            let pageView = page.pageView()
+            pageView.keyboardDelegate = keyboardDelegate
             views.append(pageView)
         }
        /* let pageView1 = PageView(index: 0, backgroundColor: .red)
@@ -134,6 +136,6 @@ extension AKboardView: UIScrollViewDelegate {
     }
 }
 
-protocol AKboardViewActionDelegate {
-    func setupControls();
+protocol AKboardActionDelegate {
+    func keyboardPhraseSelected(_ text: String)
 }
