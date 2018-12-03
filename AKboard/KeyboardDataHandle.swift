@@ -57,7 +57,7 @@ class KeyboardPage{
     private var pageKey: String?
     private var pageItems = [Int: Set<KeyboardItem>]()
     private var currentIndex = 0
-
+    
     init(_ key: String){
         self.pageKey =  key
     }
@@ -79,5 +79,14 @@ class KeyboardPage{
             currentIndex += 1
             addPageItem(item)
         }
+    }
+    
+    func pageViews() -> [PageView]{
+        var pageViews = [PageView]()
+        for (key, value) in pageItems{
+            pageViews.append(PageView(index: key, backgroundColor: .orange, keyboardItems: value))
+        }
+        
+        return pageViews
     }
 }

@@ -77,6 +77,7 @@ class KeyboardViewController: UIInputViewController {
          // self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
           self.view.addSubview(keyboardView)
         
+        
           //self.nextKeyboardButton.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
           //self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
 

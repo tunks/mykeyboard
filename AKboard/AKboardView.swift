@@ -66,7 +66,11 @@ class AKboardView: UIView{
             ])
         
         // Initializing the views we'll put in the scrollView and adding them to an array for convenience
-        let pageView1 = PageView(index: 0, backgroundColor: .red)
+        
+        for pageView in keypages.flatMap({$0.pageViews()}){
+            views.append(pageView)
+        }
+       /* let pageView1 = PageView(index: 0, backgroundColor: .red)
         let pageView2 = PageView(index: 1, backgroundColor: .orange)
         let pageView3 = PageView(index: 2, backgroundColor: .blue)
         let pageView4 = PageView(index: 3, backgroundColor: .green)
@@ -76,6 +80,7 @@ class AKboardView: UIView{
         views.append(pageView2)
         views.append(pageView3)
         views.append(pageView4)
+ */
 
         // [1]
         views.forEach { (view) in

@@ -14,10 +14,24 @@ class PageView: UIView  {
     var index: Int?
     var tableView: UITableView!
     var keyPhrases : [String]?
-
+   /*
+ */
     // Designated Init method
     init(index: Int, backgroundColor: UIColor) {
         super.init(frame: .zero)
+        keyPhrases = ["Technical is dispatched",
+                      "Wifi Configuration issue",
+                      "Customer reported Issue",
+                      "No issue Found"];
+        setup()
+        self.index =  index
+        self.backgroundColor = backgroundColor
+        
+    }
+    
+    init(index: Int, backgroundColor: UIColor, keyboardItems: Set<KeyboardItem> ) {
+        super.init(frame: .zero)
+        keyPhrases = keyboardItems.map({$0.text})
         setup()
         self.index =  index
         self.backgroundColor = backgroundColor
@@ -33,7 +47,7 @@ class PageView: UIView  {
 
     func setup(){
         debugPrint("setup is started...")
-        keyPhrases = ["Technical is dispatched", "Wifi Configuration issue",  "Customer reported Issue", "No issue Found"];
+     
        /*
           let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
           let displayWidth: CGFloat = self.view.frame.width
