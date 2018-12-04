@@ -17,6 +17,10 @@ class KeyboardViewController: UIInputViewController {
     var pageControl = UIPageControl()
     var myPageControl: MyPageControl!
 
+    //let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
+    // instantiate the view
+    let keyboardView = UINib(nibName: "AKboard", bundle: nil).instantiate(withOwner: self)[0] as! AKboardView
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         // Add custom view sizing constraints here
@@ -24,14 +28,21 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        KeyboardDataStore.registerDefaultsFromSettingsBundle()
+        DispatchQueue.main.async{
+         //  KeyboardDataStore.registerDefaultsFromSettingsBundle()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.dataHandle = KeyboardDataHandle()
         // Perform custom UI setup here
+        setup()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+         print("view appeared")
+    }
+    
+    private func setup(){
         self.view.backgroundColor = UIColor.white
         self.nextKeyboardButton = UIButton(type: .system)
         
@@ -43,7 +54,7 @@ class KeyboardViewController: UIInputViewController {
         
         self.loadKeyboard()
         self.view.addSubview(self.nextKeyboardButton)
-   
+        
         
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
@@ -69,13 +80,13 @@ class KeyboardViewController: UIInputViewController {
     
     func loadKeyboard(){
         // load the nib file
-          let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
+          //let keyboardNib = UINib(nibName: "AKboard", bundle: nil)
           // instantiate the view
-          let keyboardView = keyboardNib.instantiate(withOwner: self)[0] as! AKboardView
+          //let keyboardView = keyboardNib.instantiate(withOwner: self)[0] as! AKboardView
           // add the interface to the main view
          // self.keyboardView.translatesAutoresizingMaskIntoConstraints = false
           keyboardView.keyboardDelegate = self
-          keyboardView.setup(keyboardHandle.getAll())
+          keyboardView.setupPageViews(keyboardHandle.getAll())
 
           self.view.addSubview(keyboardView)
         

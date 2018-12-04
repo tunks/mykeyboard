@@ -19,19 +19,19 @@ class AKboardView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //setup()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-       // setup()
+       setup()
     }
     
     convenience init() {
         self.init(frame: CGRect.zero)
     }
     
-    func setup( _ keypages: [KeyboardPage]) {
+    private func setup() {
         // *** SETUP SCROLLVIEW *** //
         // [1]
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,23 +67,23 @@ class AKboardView: UIView{
             ])
         
         // Initializing the views we'll put in the scrollView and adding them to an array for convenience
-        for page in keypages{
+        
+        //self.isUserInteractionEnabled = true
+        //stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (2/4))
+        
+       // setupPageControls()
+        //scrollView.alwaysBounceVertical = false
+        scrollView.isUserInteractionEnabled = true
+    }
+    
+    func setupPageViews( _ keypages: [KeyboardPage]){
+        for page in keypages.sorted(by: { $0.pageIndex < $1.pageIndex}){
+            debugPrint("page index \(page.pageIndex)")
             let pageView = page.pageView()
             pageView.keyboardDelegate = keyboardDelegate
             views.append(pageView)
         }
-       /* let pageView1 = PageView(index: 0, backgroundColor: .red)
-        let pageView2 = PageView(index: 1, backgroundColor: .orange)
-        let pageView3 = PageView(index: 2, backgroundColor: .blue)
-        let pageView4 = PageView(index: 3, backgroundColor: .green)
-
         
-        views.append(pageView1)
-        views.append(pageView2)
-        views.append(pageView3)
-        views.append(pageView4)
- */
-
         // [1]
         views.forEach { (view) in
             //view.isUserInteractionEnabled = true
@@ -92,15 +92,8 @@ class AKboardView: UIView{
             stackView.addArrangedSubview(view)
             view.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (3/4)).isActive = true
             view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-           
+            
         }
-        
-        //self.isUserInteractionEnabled = true
-        //stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (2/4))
-        
-       // setupPageControls()
-        //scrollView.alwaysBounceVertical = false
-        scrollView.isUserInteractionEnabled = true
     }
     
     func setupPageControls(){

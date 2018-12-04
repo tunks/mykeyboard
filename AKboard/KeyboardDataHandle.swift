@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct KeyDataEntity{
     var text: String?
@@ -44,9 +44,13 @@ class KeyboardDataHandle: DataHandle{
     }
     
     func getAll() -> [KeyboardPage] {
+        //print("getAll():: entities")
         let entities = dataStoreDelegate?.values().sorted(by: { $0.text.lowercased() < $1.text.lowercased() })
+        //debugPrint(entities)
+
         for item in entities!{
             let key = String(item.text.first!).uppercased()
+            print(item)
             pageHandle?.addPageItem(KeyboardItem(text: item.text), key: key)
         }
         return (pageHandle?.pages())!
@@ -88,7 +92,7 @@ class KeyboardPage{
     }
     
     func pageView() -> PageView{
-        return PageView(index: pageIndex, backgroundColor: .orange, keyboardItems: pageItems)
+        return PageView(index: pageIndex, backgroundColor: UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0), keyboardItems: pageItems)
     }
     
 }
