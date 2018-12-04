@@ -173,7 +173,7 @@ extension KeyboardDataStore {
         for keyValue in keyValues {
             let key = "\(DEFAULT_KEY_PREFIX)\(i)"
             let value = keyValue["keytext"] as? String
-            self.shared.set(key: key, value: KeyboardItem(text: value!, key: key))
+            self.shared.set(key: key, value: KeyboardItem(text: (value!).trimmingCharacters(in: .whitespaces), key: key))
             i += 1
             self.shared.set(key: DEFAULT_KEY_COUNT, value: i)
         }

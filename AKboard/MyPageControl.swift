@@ -11,6 +11,7 @@ import UIKit
 
 class PageCategory{
     var title: String?
+    var pageIndex: Int?
     
     init(title: String){
         self.title = title;
@@ -20,6 +21,11 @@ class PageCategory{
         let button = UIButton()
         button.setTitle(title!, for: .normal)
         button.setTitleColor(.black, for: .normal)
+        //button.layer.borderColor = UIColor.lightGray.cgColor
+        //button.layer.borderWidth = 1.0
+        button.layer.cornerRadius = 8.0
+        //button.clipsToBounds = true
+        button.titleLabel?.font = button.titleLabel?.font.withSize(14)
         return button
     }
 }
@@ -42,18 +48,34 @@ class MyPageControl : NSObject{
     }
     
     func selectIndex(_ index:Int){
-        for button in (stack?.subviews)! as! [UIButton] {
-            button.isSelected = true
-        }
+        //print("page selected index \(index)")
+        selectButton(index)
     }
     
     @objc func selected(sender : UIButton){
         for button in (stack?.subviews)! as! [UIButton] {
             button.isSelected = button == sender
         }
-        delegate?.selectedIndex((stack?.subviews.index(of: sender))!)
+        let index = (stack?.subviews.index(of: sender))!
+        //print("button clicked \(index)")
+        selectButton(index)
+        delegate?.selectedIndex(index)
     }
 
+    private func selectButton(_ index: Int){
+        var position = 0
+        for button in (stack?.subviews)! as! [UIButton] {
+            if index == position{
+                button.isSelected = true
+                button.backgroundColor = UIColor.lightGray
+            }
+            else{
+                button.isSelected = false
+                button.backgroundColor = stack?.backgroundColor
+            }
+            position += 1
+        }
+    }
 }
 
 protocol MyPageControlDelegate {

@@ -117,7 +117,7 @@ class KeyboardPageHandle: PageHandle{
         }
         else{
             currentIndex += 1
-            addPageItem(item)
+            addPageItem(item,key: key)
         }
     }
     

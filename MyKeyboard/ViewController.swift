@@ -51,7 +51,7 @@ class ViewController: FormViewController {
             else{
                 return
         }
-        let keyItem = KeyboardItem(text: text, key: key)
+        let keyItem = KeyboardItem(text: text.trimmingCharacters(in: .whitespaces), key: key)
         debugPrint(keyItem)
         self.datastore.set(key: key, value: keyItem)
     }

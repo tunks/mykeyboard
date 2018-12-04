@@ -13,7 +13,7 @@ class AKboardView: UIView{
     private var scrollView = UIScrollView(frame: .zero)
     private var stackView = UIStackView(frame: .zero)
     private var views:[UIView] = []
-    var pageControl = UIPageControl()
+    var pageControlDelegate: MyPageControlDelegate?
     var keyboardDelegate: AKboardActionDelegate?
     
     override init(frame: CGRect) {
@@ -73,20 +73,35 @@ class AKboardView: UIView{
             stackView.addArrangedSubview(view)
             view.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: (3/4)).isActive = true
             view.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-            
         }
     }
-    
-    func setupPageControls(){
-        // *** ADD PAGECONTROLL *** //
-        self.addSubview(pageControl)
-        pageControl.numberOfPages = 3;
-        pageControl.addTarget(self, action: #selector(pageControlTapped(sender:)), for: .valueChanged)
+}
+
+protocol AKboardActionDelegate {
+    func keyboardPhraseSelected(_ text: String)
+}
+
+extension AKboardView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.bounds.width
+        let pageFraction = scrollView.contentOffset.x/pageWidth
+        let pageIndex = Int((round(pageFraction)))
+        pageControlDelegate?.selectedIndex(pageIndex)
+    }
+}
+
+/**
+ AKboardView Page control delegate
+ **/
+extension AKboardView: MyPageControlDelegate{
+    func selectedIndex(_ index: Int) {
+        self.pageControlTapped(index)
     }
     
-    @objc func pageControlTapped(sender: UIPageControl) {
+    private func pageControlTapped(_ index: Int) {
+        //print("page control tapped \(index)")
         let pageWidth = scrollView.bounds.width
-        let offset = sender.currentPage * Int(pageWidth)
+        let offset = index * Int(pageWidth)
         UIView.animate(withDuration: 0.33, animations: { [weak self] in
             self?.scrollView.contentOffset.x = CGFloat(offset)
         })
@@ -94,14 +109,3 @@ class AKboardView: UIView{
 }
 
 
-extension AKboardView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageWidth = scrollView.bounds.width
-        let pageFraction = scrollView.contentOffset.x/pageWidth
-        pageControl.currentPage = Int((round(pageFraction)))
-    }
-}
-
-protocol AKboardActionDelegate {
-    func keyboardPhraseSelected(_ text: String)
-}
