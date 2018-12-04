@@ -77,7 +77,6 @@ class KeyboardDataStore: DataStoreDelegate{
     func set(key: String, value: KeyboardItem) {
         try? userDefaults.set(value.encode(), forKey: key)
         self.addKeyIndex(key: key)
-        debugPrint("data store saved => k: \(key), v: \(value)")
     }
     
     func set(key: String, value: String){
@@ -161,13 +160,8 @@ extension KeyboardDataStore{
 extension KeyboardDataStore {
     static func registerDefaultsFromSettingsBundle()
     {
-        print("Registering default values")
-       // let path = Bundle.main.path(forResource: "MyKeyboard", ofType: "plist")
         let path = Bundle.main.url(forResource: "Settings", withExtension: "bundle")!
                                .appendingPathComponent("Keyboard.plist")
-        
-        print("Path  \(path.debugDescription)")
-
         guard let dictSettings = NSDictionary(contentsOf: path)
         else {
             print("Path not found \(path.debugDescription)")
@@ -183,6 +177,5 @@ extension KeyboardDataStore {
             i += 1
             self.shared.set(key: DEFAULT_KEY_COUNT, value: i)
         }
-        //print(" default values \( self.shared.values().debugDescription)")
     }
 }

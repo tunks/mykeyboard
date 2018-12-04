@@ -42,8 +42,8 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         self.loadKeyboard()
         self.view.addSubview(self.nextKeyboardButton)
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        self.nextKeyboardButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
@@ -98,7 +98,7 @@ class KeyboardViewController: UIInputViewController {
         self.myPageControl.stack!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.myPageControl.stack!)
         myPageControl.stack!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -5).isActive = true
+        myPageControl.stack!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -8).isActive = true
     }
 }
 

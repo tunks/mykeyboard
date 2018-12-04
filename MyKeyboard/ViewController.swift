@@ -16,9 +16,7 @@ class ViewController: FormViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         KeyboardDataStore.registerDefaultsFromSettingsBundle()
-        let keyItems = datastore.values()
-        debugPrint(keyItems)
-        
+        let keyItems = datastore.values()        
         super.viewDidLoad()
         form +++
             MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
