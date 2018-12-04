@@ -11,7 +11,5 @@ import UIKit
 
 class PageTableCell: UITableViewCell{
     var keyText: String?
-    
     @IBOutlet weak var textButton: UIButton!
-    
 }

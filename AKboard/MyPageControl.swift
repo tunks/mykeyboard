@@ -18,10 +18,8 @@ class PageCategory{
     
     func button() -> UIButton {
         let button = UIButton()
-       // let image = UIImage(named: "letter_a")
         button.setTitle(title!, for: .normal)
         button.setTitleColor(.black, for: .normal)
-
         return button
     }
 }
@@ -32,13 +30,10 @@ class MyPageControl : NSObject{
     
     init(_ categories: [PageCategory]) {
         let array = categories.map({return $0.button()})
-        
         stack = UIStackView(arrangedSubviews: array)
         stack?.spacing = 20
         stack?.distribution = .fillEqually
         stack?.alignment = .center
-    
-        
         super.init()
         
         array.forEach({ button in

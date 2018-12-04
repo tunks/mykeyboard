@@ -51,7 +51,6 @@ class ViewController: FormViewController {
     private func updateRowValueOnDatastore(_ row: NameRow, key: String, item: KeyboardItem? = nil){
         guard let text = row.value
             else{
-                print("Input text not set \(String(describing: row.value))")
                 return
         }
         let keyItem = KeyboardItem(text: text, key: key)

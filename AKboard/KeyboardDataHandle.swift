@@ -14,7 +14,6 @@ struct KeyDataEntity{
 }
 
 protocol DataHandle{
-    func save(entity: KeyboardItem)
     func getAll() -> [KeyboardPage]
 }
 
@@ -24,7 +23,6 @@ protocol PageHandle{
     func pages() -> [KeyboardPage]
     func pageViews() -> [PageView]
 }
-
 
 class KeyboardDataHandle: DataHandle{
     var dataStoreDelegate: DataStoreDelegate?
@@ -39,18 +37,10 @@ class KeyboardDataHandle: DataHandle{
         self.dataStoreDelegate = delegate
     }
     
-    func save(entity: KeyboardItem) {
-        
-    }
-    
     func getAll() -> [KeyboardPage] {
-        //print("getAll():: entities")
         let entities = dataStoreDelegate?.values().sorted(by: { $0.text.lowercased() < $1.text.lowercased() })
-        //debugPrint(entities)
-
         for item in entities!{
             let key = String(item.text.first!).uppercased()
-            print(item)
             pageHandle?.addPageItem(KeyboardItem(text: item.text), key: key)
         }
         return (pageHandle?.pages())!
